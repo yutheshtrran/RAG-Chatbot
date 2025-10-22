@@ -1,0 +1,71 @@
+medical_rag_chatbot/
+│
+├── README.md
+├── config.yaml
+│
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py
+│   │   ├── routes.py
+│   │   ├── chatbot_engine.py
+│   │   ├── retriever.py
+│   │   ├── embedder.py
+│   │   ├── db_handler.py
+│   │   ├── evaluation.py
+│   │   ├── utils.py
+│   │   ├── config.py
+│   │   └── requirements.txt
+│   │
+│   ├── data/
+│   │   ├── raw/
+│   │   ├── processed/
+│   │   ├── embeddings/
+│   │   └── examples/
+│   │
+│   ├── models/
+│   │   ├── embedding_model/
+│   │   ├── generative_model/
+│   │   └── __init__.py
+│   │
+│   ├── notebooks/
+│   │   ├── 01_data_preprocessing.ipynb
+│   │   ├── 02_embedding_generation.ipynb
+│   │   ├── 03_vector_store_test.ipynb
+│   │   ├── 04_chatbot_integration.ipynb
+│   │   ├── 05_evaluation.ipynb
+│   │   ├── 06_visualization.ipynb
+│   │   └── 07_final_report_figures.ipynb
+│   │
+│   ├── run.py
+│   └── Dockerfile
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── api.js
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   ├── index.css
+│   │   ├── components/
+│   │   │   ├── ChatWindow.jsx
+│   │   │   ├── MessageBubble.jsx
+│   │   │   ├── Loader.jsx
+│   │   │   ├── Header.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   └── Footer.jsx
+│   │   ├── pages/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Evaluation.jsx
+│   │   │   └── About.jsx
+│   │   ├── assets/
+│   │   └── styles/
+│   ├── package.json
+│   ├── vite.config.js
+│   └── tailwind.config.js
+│
+└── evaluation/
+    ├── metrics_results.json
+    ├── graphs/
+    ├── comparison_report.md
+    └── user_feedback.csv
