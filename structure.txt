@@ -52,6 +52,7 @@ medical_rag_chatbot/
 │   │   │   ├── MessageBubble.jsx
 │   │   │   ├── Loader.jsx
 │   │   │   ├── Header.jsx
+|   |   |   |── icons.jsx
 │   │   │   ├── Sidebar.jsx
 │   │   │   └── Footer.jsx
 │   │   ├── pages/

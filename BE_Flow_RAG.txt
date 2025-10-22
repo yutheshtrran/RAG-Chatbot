@@ -1,0 +1,54 @@
+Backend Flow for Medical RAG Chatbot Project
+Frontend (React)
+│
+├── ChatWindow.jsx
+│     │
+│     ▼
+│  POST /api/chat
+│     │
+│     ▼
+│  Flask Backend
+│     ├─ chatbot_engine.py → handles RAG pipeline
+│     ├─ embedder.py → generates embeddings for queries
+│     ├─ retriever.py → retrieves top-K relevant documents from vector DB
+│     ├─ db_handler.py → logs user queries/responses
+│     └─ Returns JSON {message: "response text"}
+│
+├── Dashboard.jsx
+│     │
+│     ▼
+│  GET /api/dashboard
+│     │
+│     ▼
+│  Flask Backend
+│     ├─ db_handler.py → fetch evaluation metrics
+│     ├─ evaluation.py → calculates accuracy, latency, hallucination
+│     └─ Returns JSON {metrics, trends, stats}
+│
+├── Evaluation.jsx
+│     │
+│     ▼
+│  GET /api/evaluations?project=X
+│     │
+│     ▼
+│  Flask Backend
+│     ├─ db_handler.py → fetch filtered project data
+│     ├─ evaluation.py → compute KPIs and performance data
+│     └─ Returns JSON {chartData, tableData}
+│
+├── Download Report
+│     │
+│     ▼
+│  GET /api/evaluations/download?project=X
+│     │
+│     ▼
+│  Flask Backend
+│     └─ Generates CSV/PDF → returns file response
+│
+└── Config / Admin
+      │
+      ▼
+  Optional APIs:
+      ├─ /api/models → list embedding/generative models
+      ├─ /api/users → fetch user info
+      └─ /api/metrics → return RAG system metrics

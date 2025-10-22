@@ -1,0 +1,47 @@
+Backend Flowchart – Textual Representation
+Frontend (React)
+│
+├── ChatWindow
+│     │
+│     ▼
+│  POST /api/chat
+│     │
+│     ▼
+│  Backend (Flask/FastAPI)
+│     ├─ Input: user query
+│     ├─ Preprocess query (clean, normalize)
+│     ├─ Call RAG Engine:
+│     │     ├─ Embed query using embedder.py
+│     │     ├─ Retrieve relevant docs from vector DB (Chroma/FAISS)
+│     │     └─ Pass query + docs to generative model (GPT / Gemini)
+│     ├─ Generate answer
+│     └─ Return JSON response to FE
+│
+├── Dashboard / Evaluation
+│     │
+│     ▼
+│  GET /api/evaluations?project=X&filters=Y
+│     │
+│     ▼
+│  Backend (Flask)
+│     ├─ Fetch evaluation metrics from database (PostgreSQL / MongoDB)
+│     ├─ Apply filtering & aggregation
+│     └─ Return JSON for FE charts/tables
+│
+├── Download Reports
+│     │
+│     ▼
+│  GET /api/evaluations/download?project=X
+│     │
+│     ▼
+│  Backend
+│     ├─ Generate CSV/PDF report from database
+│     └─ Send file response to frontend
+│
+└── Admin / Config
+      │
+      ▼
+  Optional APIs:
+      ├─ /api/models → list available embedding & generative models
+      ├─ /api/metrics → fetch RAG performance metrics
+      └─ /api/users → fetch user profile or authentication info
