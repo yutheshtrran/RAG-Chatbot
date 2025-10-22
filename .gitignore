@@ -1,0 +1,32 @@
+# Python / backend
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+*.sqlite3
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Data folders
+backend/data/raw/
+backend/data/processed/
+backend/data/embeddings/
+
+# Logs
+*.log
+
+# Docker
+*.dockerfile
+docker-compose.override.yml
+
+# Node / frontend
+node_modules/
+dist/
+*.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
