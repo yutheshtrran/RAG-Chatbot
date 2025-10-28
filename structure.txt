@@ -13,6 +13,8 @@ medical_rag_chatbot/
 │   │   ├── embedder.py
 │   │   ├── db_handler.py
 │   │   ├── evaluation.py
+|   |   ├── list_models.py
+|   |   ├── prepare_embeddings.py
 │   │   ├── utils.py
 │   │   ├── config.py
 │   │   └── requirements.txt

@@ -1,10 +1,6 @@
-from flask import Flask, jsonify
-from routes import api_bp
+from app import create_app
 
-app = Flask(__name__)
-
-# Register API routes
-app.register_blueprint(api_bp, url_prefix="/api")
+app = create_app()
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=app.config.get("DEBUG", True))

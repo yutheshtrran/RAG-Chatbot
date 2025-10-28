@@ -1,4 +1,14 @@
-# backend/app/db_handler.py
-# Placeholder for future database logic
-def get_user_data(user_id: str):
-    return {"user": user_id, "projects": ["Clinical Trial A", "Diagnostic Model V2"]}
+from typing import Dict, Any
+
+def get_user_data(user_id: str) -> Dict[str, Any]:
+    """
+    Stub for retrieving user data.
+    Returns example projects for demonstration.
+    """
+    return {
+        "user": user_id,
+        "projects": [
+            "Clinical Trial A",
+            "Diagnostic Model V2"
+        ]
+    }
