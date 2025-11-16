@@ -1,14 +1,21 @@
 import React from 'react';
-import ChatWindow from '../components/chatWindow'; // Corrected capitalization
-// Assuming you have separate components for Stats/KPIs
-import { DashboardIcon, EvaluationIcon, UserIcon, CheckCircleIcon, TrendingUpIcon } from '../components/Icons'; 
+import ChatWindow from '../components/ChatWindow'; 
+import { 
+  DashboardIcon, 
+  EvaluationIcon, 
+  UserIcon, 
+  CheckCircleIcon, 
+  TrendingUpIcon 
+} from '../components/Icons'; 
+
+import PatientUploader from '../components/PatientUploader';
 
 /**
  * Enhanced Dashboard Component
  * Provides an overview, key statistics, and the primary chat interface.
  */
 export default function Dashboard() {
-  
+
   // Placeholder Data for demonstration
   const stats = [
     { title: 'Total Evaluations', value: '452', icon: EvaluationIcon, color: 'text-blue-500', bg: 'bg-blue-50' },
@@ -19,7 +26,7 @@ export default function Dashboard() {
 
   return (
     <div className="p-4 sm:p-6 lg:p-8 bg-gray-50 min-h-screen">
-      
+
       {/* Page Header */}
       <header className="mb-8">
         <h1 className="text-3xl font-extrabold text-gray-800 flex items-center">
@@ -31,19 +38,26 @@ export default function Dashboard() {
         </p>
       </header>
 
+      {/* Patient Uploader */}
+      <PatientUploader />
+
       {/* Main Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
-        {/* Left Column (Stats/KPIs) - Takes 1/3 width on large screens */}
+
+        {/* Left Column */}
         <div className="lg:col-span-1 space-y-6">
-          <h2 className="text-xl font-semibold text-gray-700 border-b pb-2">Key Metrics</h2>
           
-          {/* Statistics Cards Grid */}
+          <h2 className="text-xl font-semibold text-gray-700 border-b pb-2">Key Metrics</h2>
+
+          {/* Statistics Cards */}
           <div className="space-y-4">
             {stats.map((stat) => {
               const Icon = stat.icon;
               return (
-                <div key={stat.title} className="p-5 bg-white rounded-xl shadow-lg border border-gray-100 transition duration-300 hover:shadow-xl">
+                <div
+                  key={stat.title}
+                  className="p-5 bg-white rounded-xl shadow-lg border border-gray-100 transition duration-300 hover:shadow-xl"
+                >
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-sm font-medium text-gray-500 truncate">{stat.title}</p>
@@ -58,33 +72,36 @@ export default function Dashboard() {
             })}
           </div>
 
-          {/* Quick Actions/Info Panel */}
+          {/* Quick Links */}
           <div className="p-5 bg-white rounded-xl shadow-lg border border-gray-100">
-             <h3 className="text-lg font-semibold text-gray-700 mb-3">Quick Links</h3>
-             <ul className="space-y-2 text-sm">
-                <li>
-                    <a href="/evaluation" className="text-blue-600 hover:text-blue-800 transition flex items-center">
-                        <EvaluationIcon className="w-4 h-4 mr-2" /> View Detailed Evaluation Reports
-                    </a>
-                </li>
-                <li>
-                    <a href="/about" className="text-indigo-600 hover:text-indigo-800 transition flex items-center">
-                        <DashboardIcon className="w-4 h-4 mr-2" /> Read RAG Documentation
-                    </a>
-                </li>
-             </ul>
+            <h3 className="text-lg font-semibold text-gray-700 mb-3">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="/evaluation" className="text-blue-600 hover:text-blue-800 transition flex items-center">
+                  <EvaluationIcon className="w-4 h-4 mr-2" />
+                  View Detailed Evaluation Reports
+                </a>
+              </li>
+              <li>
+                <a href="/about" className="text-indigo-600 hover:text-indigo-800 transition flex items-center">
+                  <DashboardIcon className="w-4 h-4 mr-2" />
+                  Read RAG Documentation
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-        
-        {/* Right Column (Chat Window) - Takes 2/3 width on large screens */}
+
+        {/* Right Column */}
         <div className="lg:col-span-2">
-          <h2 className="text-xl font-semibold text-gray-700 border-b pb-2 mb-4">AI Clinical Assistant</h2>
-          {/* The enhanced ChatWindow component takes up the main interactive space */}
+          <h2 className="text-xl font-semibold text-gray-700 border-b pb-2 mb-4">
+            AI Clinical Assistant
+          </h2>
+
           <ChatWindow />
         </div>
-        
+
       </div>
-      
     </div>
   );
 }

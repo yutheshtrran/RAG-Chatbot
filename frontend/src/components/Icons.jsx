@@ -7,6 +7,25 @@ import {
     Activity, HeartHandshake, Shield, Search
 } from 'lucide-react';
 
+// Add at the bottom or with your other exports
+export const UploadIcon = (props) => (
+  <svg
+    {...props}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M4 16v4h16v-4M12 12V4m0 0l-4 4m4-4l4 4"
+    />
+  </svg>
+);
+
+
 // --- UTILITY/GLOBAL ICONS ---
 
 export const SearchIcon = ({ className = 'w-5 h-5' }) => (

@@ -1,11 +1,13 @@
-import google.generativeai as genai
+import os
+from dotenv import load_dotenv
+from google import genai
 
-# Directly set the API key here
-genai.configure(api_key="AIzaSyCExQgq_nAcXv3lLpVY0VDVVIMf6KnVV80")
+load_dotenv()
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
-# Convert the generator to a list
-models = list(genai.list_models())
+response = client.models.generate_content(
+    model="gemini-2.5-flash-preview-09-2025",
+    contents=["Hello! Can you explain dengue fever treatment?"]
+)
 
-print("Available Gemini models:")
-for m in models:
-    print(m)
+print(response.text)

@@ -1,68 +1,66 @@
 import React, { useState } from "react";
-import ReactMarkdown from "react-markdown";
 import { sendMessage } from "../api";
 
 export default function ChatWindow() {
-  const [messages, setMessages] = useState([
-    { sender: "bot", text: "Hello! I’m your Medical Assistant. Ask me anything." },
-  ]);
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleSend = async () => {
     if (!input.trim()) return;
 
-    const userMsg = { sender: "user", text: input };
-    setMessages((prev) => [...prev, userMsg]);
-    setInput("");
+    // Show user message immediately
+    setMessages((prev) => [...prev, { sender: "user", text: input }]);
     setLoading(true);
 
-    const botReply = await sendMessage(input);
-    setMessages((prev) => [...prev, { sender: "bot", text: botReply }]);
+    // Send to backend via API
+    const reply = await sendMessage(input);
+    setMessages((prev) => [...prev, { sender: "bot", text: reply }]);
+    setInput("");
     setLoading(false);
   };
 
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
-      <div className="w-full max-w-2xl bg-white shadow-xl rounded-2xl p-6 flex flex-col h-[80vh]">
-        <div className="flex-1 overflow-y-auto mb-4 space-y-4">
-          {messages.map((msg, i) => (
-            <div
-              key={i}
-              className={`p-3 rounded-xl max-w-[80%] ${
-                msg.sender === "user"
-                  ? "bg-blue-500 text-white self-end"
-                  : "bg-gray-200 text-gray-800 self-start"
-              }`}
-            >
-              {/* Render markdown for bot replies */}
-              {msg.sender === "bot" ? (
-                <ReactMarkdown>{msg.text}</ReactMarkdown>
-              ) : (
-                msg.text
-              )}
-            </div>
-          ))}
-          {loading && (
-            <div className="text-gray-500 text-sm animate-pulse">Thinking...</div>
-          )}
-        </div>
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSend();
+    }
+  };
 
-        <div className="flex">
-          <input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            className="flex-1 border border-gray-300 rounded-l-xl p-3 focus:outline-none"
-            placeholder="Type your question..."
-          />
-          <button
-            onClick={handleSend}
-            className="bg-blue-600 text-white px-5 rounded-r-xl hover:bg-blue-700"
+  return (
+    <div className="flex flex-col h-[500px] border rounded-lg p-4 bg-white shadow-lg">
+      {/* Chat Messages */}
+      <div className="flex-1 overflow-y-auto space-y-3 mb-4">
+        {messages.map((msg, idx) => (
+          <div
+            key={idx}
+            className={`p-3 rounded-lg max-w-[80%] ${
+              msg.sender === "user" ? "bg-blue-100 self-end" : "bg-gray-100 self-start"
+            }`}
           >
-            Send
-          </button>
-        </div>
+            {msg.text}
+          </div>
+        ))}
+        {loading && (
+          <div className="p-3 rounded-lg bg-gray-100 self-start">Typing...</div>
+        )}
+      </div>
+
+      {/* Input Box */}
+      <div className="flex items-center gap-2">
+        <input
+          type="text"
+          className="flex-1 border rounded-lg p-2"
+          placeholder="Ask about a patient, e.g., 'Show me patient 123 history'"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyPress={handleKeyPress}
+        />
+        <button
+          onClick={handleSend}
+          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+        >
+          Send
+        </button>
       </div>
     </div>
   );
