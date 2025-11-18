@@ -1,0 +1,9 @@
+Patient 7
+Patient Name: David Wilson
+Age: 47
+Gender: Male
+Last Visit: 10 Nov 2025
+Diagnosis: GERD
+Medications: Omeprazole 20mg, once daily
+Lab Results: Endoscopy: mild esophagitis
+Notes: Avoid spicy foods, follow up in 3 months.

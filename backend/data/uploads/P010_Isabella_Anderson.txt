@@ -1,0 +1,9 @@
+Patient 10
+Patient Name: Isabella Anderson
+Age: 50
+Gender: Female
+Last Visit: 18 Nov 2025
+Diagnosis: Chronic Kidney Disease (Stage 2)
+Medications: Losartan 50mg, once daily
+Lab Results: Creatinine 1.4 mg/dL, eGFR 75 mL/min
+Notes: Monitor kidney function and blood pressure, follow low-sodium diet.

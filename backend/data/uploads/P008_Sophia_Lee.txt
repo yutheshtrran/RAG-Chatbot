@@ -1,0 +1,9 @@
+Patient 8
+Patient Name: Sophia Lee
+Age: 55
+Gender: Female
+Last Visit: 22 Oct 2025
+Diagnosis: Type 2 Diabetes
+Medications: Metformin 500mg, twice daily
+Lab Results: Blood sugar 190 mg/dL, HbA1c 7.8%
+Notes: Emphasized exercise, diet modification, and medication adherence.

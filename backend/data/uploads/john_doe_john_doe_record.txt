@@ -1,8 +1,0 @@
-Patient Name: John Doe
-Age: 45
-Gender: Male
-Last Visit: 12 Nov 2025
-Diagnosis: Type 2 Diabetes
-Medications: Metformin 500mg, once daily
-Lab Results: Blood sugar 180 mg/dL, Cholesterol 210 mg/dL
-Notes: Patient advised to monitor sugar levels and follow low-carb diet.

@@ -1,0 +1,9 @@
+Patient 2
+Patient Name: Jane Smith
+Age: 38
+Gender: Female
+Last Visit: 05 Oct 2025
+Diagnosis: Hypertension
+Medications: Lisinopril 10mg, once daily
+Lab Results: Blood pressure 150/95 mmHg, Cholesterol 195 mg/dL
+Notes: Advised to reduce salt intake and exercise regularly.

@@ -1,4 +1,0 @@
-Patient John Doe, 45 years old, male.
-Diagnosed with hypertension and type-2 diabetes.
-Prescribed Metformin 500mg twice daily.
-Last visit: 2025-10-15.

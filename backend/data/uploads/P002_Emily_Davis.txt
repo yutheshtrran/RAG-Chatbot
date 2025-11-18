@@ -1,0 +1,9 @@
+Patient 4
+Patient Name: Emily Davis
+Age: 29
+Gender: Female
+Last Visit: 15 Nov 2025
+Diagnosis: Iron Deficiency Anemia
+Medications: Ferrous sulfate 325mg, once daily
+Lab Results: Hemoglobin 9.5 g/dL, Ferritin 12 ng/mL
+Notes: Advised iron-rich diet and follow-up after 2 months.

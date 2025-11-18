@@ -1,0 +1,9 @@
+Patient 6
+Patient Name: Olivia Martinez
+Age: 34
+Gender: Female
+Last Visit: 03 Nov 2025
+Diagnosis: Hypothyroidism
+Medications: Levothyroxine 50mcg, once daily
+Lab Results: TSH 6.8 mIU/L
+Notes: Continue medication and repeat labs in 6 weeks.

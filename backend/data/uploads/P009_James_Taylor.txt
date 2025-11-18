@@ -1,0 +1,9 @@
+Patient 9
+Patient Name: James Taylor
+Age: 40
+Gender: Male
+Last Visit: 01 Nov 2025
+Diagnosis: Asthma
+Medications: Salbutamol inhaler, as needed
+Lab Results: Spirometry: FEV1 75%
+Notes: Advised regular inhaler use and avoid triggers.

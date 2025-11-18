@@ -1,0 +1,9 @@
+Patient 3
+Patient Name: Michael Brown
+Age: 52
+Gender: Male
+Last Visit: 20 Sep 2025
+Diagnosis: Hyperlipidemia
+Medications: Atorvastatin 20mg, once daily
+Lab Results: LDL 160 mg/dL, HDL 40 mg/dL
+Notes: Recommended dietary changes and regular exercise.

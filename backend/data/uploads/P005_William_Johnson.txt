@@ -1,0 +1,9 @@
+Patient 5
+Patient Name: William Johnson
+Age: 61
+Gender: Male
+Last Visit: 28 Oct 2025
+Diagnosis: Osteoarthritis
+Medications: Ibuprofen 400mg, as needed
+Lab Results: X-ray: mild joint degeneration
+Notes: Recommended physical therapy and weight management.
