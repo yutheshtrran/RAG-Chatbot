@@ -1,5 +1,9 @@
-flask
-flask-cors
-numpy
-sentence-transformers
-faiss-cpu
+flask==3.0.0
+flask-cors==4.0.0
+numpy==1.24.3
+sentence-transformers==2.2.2
+faiss-cpu==1.7.4
+python-dotenv==1.0.0
+google-generativeai==0.3.0
+pdfplumber==0.10.3
+python-magic-bin==0.4.14

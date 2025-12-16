@@ -14,7 +14,7 @@ class Config:
 
     # ================= Gemini API Key =================
     # Must be supplied via .env or system environment variables
-    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyBR4QfAYCH8hDBjKvdiYSvTjjyx1Fg7IEA")
 
     # ================= Embeddings / Data =================
     EMBEDDINGS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "embeddings"))

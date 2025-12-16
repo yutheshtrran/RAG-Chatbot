@@ -96,6 +96,16 @@ def get_patient_rag_response(patient_id: str, user_message: str, top_k: int = 3)
         local_answer = _local_generate(user_message, sources)
         # If Gemini is available, enhance the answer
         gemini_response = _gemini_generate(user_message, local_summary=local_answer)
+
+        # If Gemini returns an error (expired/invalid API key or other failure),
+        # gracefully fall back to the locally generated answer so the system
+        # remains usable even without a working Gemini key.
+        if gemini_response:
+            lower = gemini_response.lower()
+            if lower.startswith("⚠️ gemini error") or "api key expired" in lower or "api_key_invalid" in lower or "api key invalid" in lower:
+                logger.warning("Gemini returned an error; falling back to local answer.")
+                return {"reply": local_answer}
+
         return {"reply": gemini_response or local_answer}
     except Exception as e:
         logger.exception("Error generating patient RAG response: %s", e)
