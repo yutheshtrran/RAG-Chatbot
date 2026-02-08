@@ -32,6 +32,20 @@ def init_db():
         )
     ''')
     
+    # Uploaded Documents table (for PDFs/files uploaded without patient ID)
+    c.execute('''
+        CREATE TABLE IF NOT EXISTS uploaded_documents (
+            doc_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            filename TEXT NOT NULL,
+            content TEXT,
+            extracted_name TEXT,
+            extracted_age INTEGER,
+            extracted_gender TEXT,
+            extracted_id TEXT,
+            upload_timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+        )
+    ''')
+    
     conn.commit()
     conn.close()
 
@@ -95,6 +109,111 @@ def get_patient_info(patient_id: str) -> Optional[Dict[str, Any]]:
     if row:
         return {"patient_id": row[0], "name": row[1], "age": row[2], "gender": row[3]}
     return None
+
+# ============ Uploaded Documents (Without Patient ID) ============
+
+def add_uploaded_document(filename: str, content: str, extracted_name: Optional[str] = None, 
+                         extracted_age: Optional[int] = None, extracted_gender: Optional[str] = None,
+                         extracted_id: Optional[str] = None) -> int:
+    """
+    Add an uploaded document without requiring a patient ID.
+    Returns the doc_id.
+    """
+    conn = sqlite3.connect(DB_FILE)
+    c = conn.cursor()
+    
+    c.execute("""
+        INSERT INTO uploaded_documents(filename, content, extracted_name, extracted_age, extracted_gender, extracted_id)
+        VALUES (?, ?, ?, ?, ?, ?)
+    """, (filename, content, extracted_name, extracted_age, extracted_gender, extracted_id))
+    
+    doc_id = c.lastrowid
+    conn.commit()
+    conn.close()
+    
+    return doc_id
+
+def get_uploaded_documents() -> List[Dict[str, Any]]:
+    """Get all uploaded documents."""
+    conn = sqlite3.connect(DB_FILE)
+    c = conn.cursor()
+    c.execute("""
+        SELECT doc_id, filename, content, extracted_name, extracted_age, extracted_gender, extracted_id, upload_timestamp
+        FROM uploaded_documents
+        ORDER BY upload_timestamp DESC
+    """)
+    
+    rows = c.fetchall()
+    conn.close()
+    
+    return [
+        {
+            "doc_id": r[0],
+            "filename": r[1],
+            "content": r[2],
+            "extracted_name": r[3],
+            "extracted_age": r[4],
+            "extracted_gender": r[5],
+            "extracted_id": r[6],
+            "timestamp": r[7]
+        }
+        for r in rows
+    ]
+
+def search_uploaded_documents(query: str) -> List[Dict[str, Any]]:
+    """
+    Search uploaded documents by filename, extracted name, or content keywords.
+    """
+    conn = sqlite3.connect(DB_FILE)
+    c = conn.cursor()
+    
+    query_pattern = f"%{query}%"
+    
+    c.execute("""
+        SELECT doc_id, filename, content, extracted_name, extracted_age, extracted_gender, extracted_id, upload_timestamp
+        FROM uploaded_documents
+        WHERE filename LIKE ? OR extracted_name LIKE ? OR content LIKE ?
+        ORDER BY upload_timestamp DESC
+    """, (query_pattern, query_pattern, query_pattern))
+    
+    rows = c.fetchall()
+    conn.close()
+    
+    return [
+        {
+            "doc_id": r[0],
+            "filename": r[1],
+            "content": r[2],
+            "extracted_name": r[3],
+            "extracted_age": r[4],
+            "extracted_gender": r[5],
+            "extracted_id": r[6],
+            "timestamp": r[7]
+        }
+        for r in rows
+    ]
+
+def get_all_documents_content() -> List[str]:
+    """Get content of all documents (both patient records and uploaded docs)."""
+    conn = sqlite3.connect(DB_FILE)
+    c = conn.cursor()
+    
+    all_content = []
+    
+    # Get patient records
+    c.execute("SELECT content FROM records")
+    for row in c.fetchall():
+        if row[0]:
+            all_content.append(row[0])
+    
+    # Get uploaded documents
+    c.execute("SELECT content FROM uploaded_documents")
+    for row in c.fetchall():
+        if row[0]:
+            all_content.append(row[0])
+    
+    conn.close()
+    return all_content
 
 # ---------------- Initialize DB on Import ----------------
 init_db()

@@ -1,8 +1,8 @@
 import os
 import logging
 import textwrap
-from typing import List
-from .retriever import retrieve_patient_context
+from typing import List, Optional
+from .retriever import retrieve_patient_context, retrieve_global_context
 from .db_handler import get_patient_info
 from .config import Config
 
@@ -176,23 +176,37 @@ Provide a clinically accurate but general answer in Markdown:
         return f"⚠️ Gemini error: {str(e)}"
 
 # ================= Main Patient RAG Logic =================
-def get_patient_rag_response(patient_id: str, user_message: str, top_k: int = 3) -> dict:
+def get_patient_rag_response(patient_id: str = None, user_message: str = None, top_k: int = 3) -> dict:
     """
     Retrieve patient-specific context and generate RAG-enhanced response.
+    
+    Can work with or without patient_id:
+    - With patient_id: Searches that patient's records
+    - Without patient_id: Searches all uploaded documents
     """
-    if not user_message.strip():
+    if not user_message or not user_message.strip():
         return {"reply": "Please provide a valid medical question."}
 
-    # Verify patient exists
-    patient_info = get_patient_info(patient_id)
-    if not patient_info:
-        return {"reply": f"Patient ID '{patient_id}' not found in database."}
-
     try:
-        # Retrieve top-k relevant patient records
-        sources = retrieve_patient_context(patient_id, user_message, top_k)
+        # If patient_id provided, verify patient exists and retrieve patient-specific context
+        if patient_id and patient_id.strip():
+            patient_info = get_patient_info(patient_id)
+            if not patient_info:
+                # Try searching uploaded documents by patient_id
+                sources = retrieve_patient_context(patient_id, user_message, top_k)
+                if not sources:
+                    return {"reply": f"Patient ID '{patient_id}' not found in database."}
+            else:
+                sources = retrieve_patient_context(patient_id, user_message, top_k)
+        else:
+            # No patient_id provided - search all documents
+            sources = retrieve_global_context(user_message, top_k)
+            if not sources:
+                return {"reply": "No relevant medical documents found. Please upload a patient document first."}
+        
         # Generate local answer
         local_answer = _local_generate(user_message, sources)
+        
         # If Gemini is available, enhance the answer
         gemini_response = _gemini_generate(user_message, local_summary=local_answer)
 

@@ -49,41 +49,41 @@ export default function PatientUploader() {
   };
 
   return (
-    <div className="p-4 border rounded-lg shadow-md bg-white max-w-xl mx-auto mt-4">
-      <h2 className="text-xl font-bold mb-4">Upload Patient Records</h2>
+    <div className="p-4 border rounded-lg shadow-md bg-white dark:bg-slate-800 border-gray-200 dark:border-slate-700 max-w-xl mx-auto mt-4">
+      <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">Upload Patient Records</h2>
 
       <div className="mb-2">
-        <label>Patient ID</label>
+        <label className="text-sm text-gray-700 dark:text-gray-300">Patient ID</label>
         <input
-          className="border rounded px-2 py-1 w-full"
+          className="border rounded px-2 py-1 w-full bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-slate-600"
           value={patientId}
           onChange={(e) => setPatientId(e.target.value)}
         />
       </div>
 
       <div className="mb-2">
-        <label>Name (optional)</label>
+        <label className="text-sm text-gray-700 dark:text-gray-300">Name (optional)</label>
         <input
-          className="border rounded px-2 py-1 w-full"
+          className="border rounded px-2 py-1 w-full bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-slate-600"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
       </div>
 
       <div className="mb-2">
-        <label>Age (optional)</label>
+        <label className="text-sm text-gray-700 dark:text-gray-300">Age (optional)</label>
         <input
           type="number"
-          className="border rounded px-2 py-1 w-full"
+          className="border rounded px-2 py-1 w-full bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-slate-600"
           value={age}
           onChange={(e) => setAge(e.target.value)}
         />
       </div>
 
       <div className="mb-2">
-        <label>Gender (optional)</label>
+        <label className="text-sm text-gray-700 dark:text-gray-300">Gender (optional)</label>
         <select
-          className="border rounded px-2 py-1 w-full"
+          className="border rounded px-2 py-1 w-full bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-slate-600"
           value={gender}
           onChange={(e) => setGender(e.target.value)}
         >
@@ -94,8 +94,8 @@ export default function PatientUploader() {
       </div>
 
       <div className="mb-4">
-        <label>Files (PDF, TXT, CSV)</label>
-        <input type="file" multiple onChange={handleFileChange} />
+        <label className="text-sm text-gray-700 dark:text-gray-300">Files (PDF, TXT, CSV)</label>
+        <input type="file" multiple onChange={handleFileChange} className="text-sm text-gray-700 dark:text-gray-300" />
       </div>
 
       <button
@@ -105,7 +105,7 @@ export default function PatientUploader() {
         Upload
       </button>
 
-      {status && <p className="mt-2 text-sm text-gray-700">{status}</p>}
+      {status && <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">{status}</p>}
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 // Import all necessary icons from lucide-react (or your chosen modern library)
 import { 
-    Send, Loader2, Menu, Bell, User, Settings, Github, LogOut, X, 
-    LayoutDashboard, BarChart2, Info, CheckCircle, TrendingUp, 
-    Filter, Download, Table, ChevronDown, Link as ExternalLink, 
-    Activity, HeartHandshake, Shield, Search
+  Send, Loader2, Menu, Bell, User, Settings, Github, LogOut, X, 
+  LayoutDashboard, BarChart2, Info, CheckCircle, TrendingUp, 
+  Filter, Download, Table, ChevronDown, Link as ExternalLink, 
+  Activity, HeartHandshake, Shield, Search, Sun, Moon
 } from 'lucide-react';
 
 // Add at the bottom or with your other exports
@@ -155,5 +155,17 @@ export const HeartHandshakeIcon = ({ className = 'w-6 h-6' }) => (
 
 // Activity/System Icon (for technology/metrics)
 export const ActivityIcon = ({ className = 'w-6 h-6' }) => (
-    <Activity size={24} className={className} />
+  <Activity size={24} className={className} />
+);
+
+// --- THEME ICONS ---
+
+// Sun Icon (for light mode)
+export const SunIcon = ({ className = 'w-6 h-6' }) => (
+  <Sun size={24} className={className} />
+);
+
+// Moon Icon (for dark mode)
+export const MoonIcon = ({ className = 'w-6 h-6' }) => (
+  <Moon size={24} className={className} />
 );

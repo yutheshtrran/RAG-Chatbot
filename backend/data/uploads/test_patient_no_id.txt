@@ -1,0 +1,55 @@
+======================================
+PATIENT MEDICAL RECORD
+======================================
+Patient ID: 020
+Name: Emily Johnson
+Age: 52
+Gender: Female
+Date of Record: 2024-03-01
+Hospital: Central Medical Center
+
+---------- CHIEF COMPLAINT ----------
+Persistent migraine headaches and dizziness
+
+---------- MEDICAL HISTORY ----------
+- Migraines (diagnosed 2010)
+- Hypertension (diagnosed 2015)
+- Anxiety disorder (diagnosed 2018)
+- Previous head injury (2008)
+
+---------- CURRENT MEDICATIONS ----------
+1. Sumatriptan 100mg - as needed for migraines (max 2x per week)
+2. Lisinopril 10mg - once daily (blood pressure)
+3. Sertraline 50mg - once daily (anxiety)
+4. Ibuprofen 400mg - as needed for pain
+
+---------- VITAL SIGNS ----------
+Blood Pressure: 128/80 mmHg
+Heart Rate: 72 bpm
+Temperature: 98.6°F
+Respiratory Rate: 16 breaths/min
+
+---------- PHYSICAL EXAMINATION ----------
+- General: Alert, appears anxious
+- Neurological: Cranial nerves intact
+- Coordination: Normal
+- Reflexes: Normal and symmetric
+- Mental status: Oriented x3, mild anxiety noted
+
+---------- DIAGNOSTIC TEST RESULTS ----------
+- MRI Brain: Normal, no abnormalities
+- CT Head: Normal
+- EEG: Normal
+- Blood Tests: All within normal limits
+
+---------- ASSESSMENT & PLAN ----------
+1. Chronic migraines - well-controlled on current regimen
+2. Hypertension - adequately controlled
+3. Anxiety disorder - stable on current SSRI
+4. Continue current medications
+5. Recommend stress management and regular exercise
+6. Follow-up with neurology in 3 months
+7. Patient counseled on migraine triggers
+
+---------- DOCTOR'S NOTES ----------
+Patient reports good control of migraines with current treatment. Episodes occur 1-2 times per month. Anxiety appears manageable. Patient is compliant with medications. Discussed lifestyle modifications including caffeine reduction, regular sleep schedule, and stress reduction techniques. No new concerning symptoms reported.

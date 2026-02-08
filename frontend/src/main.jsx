@@ -8,3 +8,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>
 );
+
+// Apply initial theme class based on localStorage / system preference
+const saved = localStorage.getItem('theme-preference');
+if (saved) {
+  if (saved === 'dark') document.documentElement.classList.add('dark');
+  else document.documentElement.classList.remove('dark');
+} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.classList.add('dark');
+}

@@ -21,7 +21,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, activePage, setActivePage, u
             {/* 1. Mobile Overlay (Darkens background when sidebar is open on small screens) */}
             {isSidebarOpen && (
                 <div 
-                    className="fixed inset-0 bg-gray-900/50 z-30 lg:hidden"
+                    className="fixed inset-0 bg-gray-900/50 dark:bg-slate-900/70 z-30 lg:hidden"
                     onClick={() => setIsSidebarOpen(false)}
                     aria-hidden="true"
                 />
@@ -30,7 +30,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, activePage, setActivePage, u
             {/* 2. Sidebar Container */}
             <div className={`
                 fixed inset-y-0 left-0 z-40 w-64
-                transform bg-white border-r border-gray-100 shadow-2xl 
+                transform bg-white dark:bg-slate-900 border-r border-gray-100 dark:border-slate-700 shadow-2xl 
                 transition-transform duration-300 ease-in-out
                 lg:translate-x-0 lg:shadow-xl
                 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
@@ -40,13 +40,13 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, activePage, setActivePage, u
                     {/* Top Section: Logo/Branding and Close Button */}
                     <div className="flex justify-between items-center mb-8">
                         {/* Enhanced Branding */}
-                        <h2 className="text-2xl font-extrabold tracking-tight text-gray-800">
-                            <span className="text-blue-600">Medi</span><span className="font-light text-indigo-700">RAG</span>
+                        <h2 className="text-2xl font-extrabold tracking-tight text-gray-800 dark:text-white">
+                            <span className="text-blue-600 dark:text-blue-400">Medi</span><span className="font-light text-indigo-700 dark:text-indigo-400">RAG</span>
                         </h2>
                         {/* Close Button for Mobile */}
                         <button
                             onClick={() => setIsSidebarOpen(false)}
-                            className="text-gray-400 hover:text-blue-600 lg:hidden p-1 rounded-full hover:bg-gray-100 transition-colors"
+                            className="text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 lg:hidden p-1 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors"
                             aria-label="Close sidebar"
                         >
                             <XIcon className="w-6 h-6" />
@@ -71,8 +71,8 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, activePage, setActivePage, u
                                     className={`
                                         flex items-center w-full p-3 rounded-xl transition-all duration-200 text-base
                                         ${isActive
-                                            ? 'bg-blue-600 text-white font-semibold shadow-lg hover:bg-blue-700'
-                                            : 'text-gray-700 hover:bg-gray-100 hover:text-blue-600'
+                                            ? 'bg-blue-600 dark:bg-blue-700 text-white font-semibold shadow-lg hover:bg-blue-700 dark:hover:bg-blue-800'
+                                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400'
                                         }`}
                                 >
                                     <Icon className={`mr-4 ${isActive ? 'text-white' : 'text-gray-500'}`} />
@@ -83,27 +83,27 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen, activePage, setActivePage, u
                     </nav>
 
                     {/* Bottom Section: User Profile and Logout */}
-                    <div className="mt-8 pt-4 border-t border-gray-200">
+                    <div className="mt-8 pt-4 border-t border-gray-200 dark:border-slate-700">
                         {/* User Card */}
-                        <div className="flex items-center p-3 rounded-xl bg-gray-50 mb-4 cursor-pointer hover:bg-gray-100 transition">
-                            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-500 text-white font-semibold flex-shrink-0">
+                        <div className="flex items-center p-3 rounded-xl bg-gray-50 dark:bg-slate-800 mb-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-700 transition">
+                            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-500 dark:bg-blue-600 text-white font-semibold flex-shrink-0">
                                 {userName.charAt(0)}
                             </div>
                             <div className="ml-3 truncate">
-                                <p className="text-sm font-semibold text-gray-800 truncate">{userName}</p>
-                                <p className="text-xs text-gray-500">View Profile</p>
+                                <p className="text-sm font-semibold text-gray-800 dark:text-white truncate">{userName}</p>
+                                <p className="text-xs text-gray-500 dark:text-gray-400">View Profile</p>
                             </div>
                         </div>
 
                         {/* Logout/Version Info */}
                         <a 
                             href="/logout" 
-                            className="flex items-center w-full p-3 rounded-xl text-sm text-red-500 hover:bg-red-50 hover:text-red-700 transition"
+                            className="flex items-center w-full p-3 rounded-xl text-sm text-red-500 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30 hover:text-red-700 dark:hover:text-red-300 transition"
                         >
                             <LogOutIcon className="w-5 h-5 mr-3" />
                             Log Out
                         </a>
-                        <p className="mt-4 text-xs text-gray-400">
+                        <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
                             v1.0.0 | Context: Clinical Data
                         </p>
                     </div>

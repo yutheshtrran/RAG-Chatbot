@@ -42,11 +42,11 @@ export default function ChatWindow() {
   };
 
   return (
-    <div className="flex flex-col h-[600px] border border-gray-300 rounded-lg p-4 bg-white shadow-lg">
+    <div className="flex flex-col h-[600px] border border-gray-300 dark:border-slate-700 rounded-lg p-4 bg-white dark:bg-slate-800 shadow-lg">
       {/* Chat Messages */}
-      <div className="flex-1 overflow-y-auto space-y-4 mb-4 bg-gray-50 rounded-lg p-3">
+      <div className="flex-1 overflow-y-auto space-y-4 mb-4 bg-gray-50 dark:bg-slate-900 rounded-lg p-3">
         {messages.length === 0 && !loading && (
-          <div className="flex items-center justify-center h-full text-gray-400">
+          <div className="flex items-center justify-center h-full text-gray-400 dark:text-gray-400">
             <p className="text-center">
               👋 Welcome! Start by asking a question about a patient.<br/>
               <span className="text-sm">Example: "Patient 001 what is their diagnosis?"</span>
@@ -60,10 +60,10 @@ export default function ChatWindow() {
             className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
           >
             <div
-              className={`max-w-[75%] p-4 rounded-lg ${
+            className={`max-w-[75%] p-4 rounded-lg ${
                 msg.sender === "user"
                   ? "bg-blue-600 text-white rounded-br-none"
-                  : "bg-gray-200 text-gray-900 rounded-bl-none"
+                  : "bg-gray-200 dark:bg-slate-700 text-gray-900 dark:text-gray-100 rounded-bl-none"
               }`}
             >
               {msg.sender === "bot" ? (
@@ -110,9 +110,9 @@ export default function ChatWindow() {
       </div>
 
       {/* Input Box */}
-      <div className="flex items-center gap-2 border-t pt-3">
+      <div className="flex items-center gap-2 border-t border-gray-200 dark:border-slate-700 pt-3">
         <textarea
-          className="flex-1 border border-gray-300 rounded-lg p-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="flex-1 border border-gray-300 dark:border-slate-600 rounded-lg p-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100"
           placeholder="Ask a question about a patient (e.g., 'Patient 001 what is their medical history?')"
           value={input}
           onChange={(e) => setInput(e.target.value)}
