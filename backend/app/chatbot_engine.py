@@ -10,6 +10,68 @@ from .config import Config
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# ================= Clean Medical Record =================
+def _clean_medical_record(text: str) -> str:
+    """Clean and format medical record for better readability."""
+    # Remove excessive separators
+    text = text.replace("=" * 50, "")
+    text = text.replace("-" * 50, "")
+    text = text.replace("-" * 40, "")
+    text = text.replace("=" * 40, "")
+    
+    # Remove extra whitespace
+    lines = [line.strip() for line in text.split("\n") if line.strip()]
+    return "\n".join(lines)
+
+def _extract_key_sections(text: str) -> dict:
+    """Extract key sections from medical record."""
+    sections = {
+        "Patient Info": "",
+        "Chief Complaint": "",
+        "Diagnosis": "",
+        "Medications": "",
+        "Test Results": "",
+        "Assessment": ""
+    }
+    
+    text_lower = text.lower()
+    
+    # Extract key information
+    if "patient" in text_lower and "id:" in text_lower:
+        for line in text.split("\n"):
+            if "patient id:" in line.lower() or "name:" in line.lower() or "age:" in line.lower():
+                if sections["Patient Info"]:
+                    sections["Patient Info"] += "\n" + line.strip()
+                else:
+                    sections["Patient Info"] = line.strip()
+    
+    if "chief complaint" in text_lower:
+        idx = text_lower.index("chief complaint")
+        chunk = text[idx:idx+400].split("\n")[0:3]
+        sections["Chief Complaint"] = "\n".join(chunk).replace("CHIEF COMPLAINT:", "").strip()
+    
+    if "diagnosis:" in text_lower:
+        idx = text_lower.index("diagnosis:")
+        chunk = text[idx:idx+300].split("\n")[0]
+        sections["Diagnosis"] = chunk.replace("DIAGNOSIS:", "").strip()
+    
+    if "medication" in text_lower:
+        idx = text_lower.index("medication")
+        chunk = text[idx:idx+500].split("\nCURRENT" if "CURRENT" in text else "\n\n")[0]
+        sections["Medications"] = chunk.replace("CURRENT MEDICATIONS", "").replace("MEDICATIONS:", "").strip()
+    
+    if "test result" in text_lower:
+        idx = text_lower.index("test result")
+        chunk = text[idx:idx+400]
+        sections["Test Results"] = chunk.replace("TEST RESULTS", "").replace("DIAGNOSTIC TEST RESULTS", "").strip()
+    
+    if "assessment" in text_lower:
+        idx = text_lower.index("assessment")
+        chunk = text[idx:idx+500]
+        sections["Assessment"] = chunk.replace("ASSESSMENT & PLAN", "").replace("ASSESSMENT:", "").strip()
+    
+    return {k: v for k, v in sections.items() if v}
+
 # ================= Local RAG Generation =================
 def _local_generate(question: str, sources: List[str]) -> str:
     """Generate answer based on local patient records."""
@@ -17,12 +79,37 @@ def _local_generate(question: str, sources: List[str]) -> str:
         return "I don't know. No relevant patient records found — please consult a clinician."
 
     lines = ["### 🩺 Answer based on internal patient records:\n"]
-    for i, s in enumerate(sources, start=1):
-        excerpt = s.strip().replace("\n", " ")
-        if len(excerpt) > 600:
-            excerpt = excerpt[:600].rsplit(" ", 1)[0] + "..."
-        wrapped = textwrap.fill(excerpt, width=100)
-        lines.append(f"**Record {i}:**\n* {wrapped}\n\n")
+    
+    for i, source in enumerate(sources, start=1):
+        # Clean the medical record
+        cleaned = _clean_medical_record(source)
+        
+        # Extract key sections
+        sections = _extract_key_sections(cleaned)
+        
+        # Format nicely
+        lines.append(f"**Record {i}:**\n")
+        
+        if sections.get("Patient Info"):
+            lines.append(f"**Patient:** {sections['Patient Info']}\n")
+        
+        if sections.get("Chief Complaint"):
+            lines.append(f"**Chief Complaint:** {sections['Chief Complaint']}\n")
+        
+        if sections.get("Diagnosis"):
+            lines.append(f"**Diagnosis:** {sections['Diagnosis']}\n")
+        
+        if sections.get("Medications"):
+            lines.append(f"**Medications:**\n{sections['Medications']}\n")
+        
+        if sections.get("Test Results"):
+            lines.append(f"**Test Results:**\n{sections['Test Results']}\n")
+        
+        if sections.get("Assessment"):
+            lines.append(f"**Assessment & Plan:**\n{sections['Assessment']}\n")
+        
+        lines.append("")
+    
     return "\n".join(lines)
 
 # ================= Gemini Generator =================
@@ -40,31 +127,43 @@ def _gemini_generate(question: str, local_summary: str = None) -> str:
         model = genai.GenerativeModel("models/gemini-2.5-pro")
 
         if local_summary and "I don't know" not in local_summary:
-            context_snippet = " ".join(local_summary.split()[:500])
+            context_snippet = " ".join(local_summary.split()[:800])
             prompt = f"""
 You are a clinical assistant AI. Base your answer PRIMARILY on the provided 'Internal patient records', then supplement with general knowledge.
 
 Internal patient records:
 {context_snippet}
 
-Question: {question}
+User Question: {question}
 
-Provide a clear, structured answer in Markdown:
-- Start with patient-specific details if available.
-- Use bullet points and concise explanations.
-- Do not invent details not in the records.
+Instructions:
+- Extract and present the MOST RELEVANT information from the patient records
+- Format using clear markdown with sections:
+  * Patient Information
+  * Chief Complaint/Symptoms
+  * Diagnosis/Conditions
+  * Current Medications
+  * Key Test Results
+  * Assessment/Treatment Plan
+- Use bullet points for lists
+- Be concise but comprehensive
+- Only include information present in the records, do NOT invent details
+- Add a note: "Based on patient records on file"
+
+Provide your answer now:
 """
         else:
             prompt = f"""
 You are a clinical assistant AI.
 
-Internal documents did not contain relevant information for this question. Use general medical knowledge.
+The internal patient records did not contain relevant information for this question. Use general medical knowledge.
 
 Question: {question}
 
-Provide a clinically accurate answer in Markdown:
-- Include bullet points.
-- Add a disclaimer: this is general information, not patient-specific.
+Provide a clinically accurate but general answer in Markdown:
+- Include relevant bullet points
+- Add disclaimer: "This is general medical information, not patient-specific guidance"
+- Recommend consulting with healthcare provider for specific conditions
 """
 
         response = model.generate_content(prompt)

@@ -1,0 +1,56 @@
+======================================
+PATIENT MEDICAL RECORD
+======================================
+Patient ID: 011
+Name: Robert Thompson
+Age: 58
+Gender: Male
+Date of Record: 2024-02-20
+Hospital: City Medical Center
+
+---------- CHIEF COMPLAINT ----------
+Shortness of breath during physical activity and occasional chest discomfort
+
+---------- MEDICAL HISTORY ----------
+- Coronary Artery Disease (diagnosed 2020)
+- Hypertension (on medication since 2018)
+- High Cholesterol (diagnosed 2019)
+- Type 2 Diabetes (diagnosed 2015)
+- Previous Myocardial Infarction (2021)
+
+---------- CURRENT MEDICATIONS ----------
+1. Metoprolol 50mg - twice daily (Beta-blocker for heart)
+2. Lisinopril 10mg - once daily (ACE inhibitor for hypertension)
+3. Atorvastatin 40mg - once daily (Statins for cholesterol)
+4. Aspirin 81mg - once daily (Blood thinner)
+5. Metformin 1000mg - twice daily (Diabetes management)
+
+---------- VITAL SIGNS ----------
+Blood Pressure: 138/88 mmHg
+Heart Rate: 72 bpm
+Temperature: 98.6°F
+Respiratory Rate: 18 breaths/min
+Oxygen Saturation: 96% on room air
+
+---------- PHYSICAL EXAMINATION ----------
+- General: Well-nourished male, alert and oriented
+- Cardiac: Regular rate and rhythm, no murmurs
+- Pulmonary: Clear to auscultation bilaterally
+- Extremities: No edema, good peripheral pulses
+
+---------- DIAGNOSTIC TEST RESULTS ----------
+- ECG: Normal sinus rhythm, no acute changes
+- Troponin: Within normal limits
+- BNP: 145 pg/mL (slightly elevated)
+- Ejection Fraction: 52% (by echocardiogram)
+
+---------- ASSESSMENT & PLAN ----------
+1. Stable coronary artery disease - continue current medications
+2. Hypertension - well controlled on current regimen
+3. Diabetes - HbA1c 7.1% (acceptable control)
+4. Prescribed stress test to evaluate exercise tolerance
+5. Recommend cardiac rehabilitation program
+6. Follow-up with cardiologist in 4 weeks
+
+---------- DOCTOR'S NOTES ----------
+Patient reports improved exercise tolerance compared to last visit. No chest pain at rest. Slight dyspnea on exertion noted when climbing stairs quickly. Overall cardiac status stable. Patient advised to continue current medications and increase physical activity gradually under medical supervision.

@@ -1,0 +1,60 @@
+======================================
+PATIENT MEDICAL RECORD
+======================================
+Patient ID: 013
+Name: Michael Chen
+Age: 52
+Gender: Male
+Date of Record: 2024-02-22
+Hospital: Orthopedic Specialty Clinic
+
+---------- CHIEF COMPLAINT ----------
+Right knee pain and swelling for 6 months, affecting mobility and work
+
+---------- MEDICAL HISTORY ----------
+- Osteoarthritis of right knee (diagnosed 2023)
+- Previous right knee meniscus tear (2010, surgically repaired)
+- Lower back pain (chronic, managed with physical therapy)
+- Hypertension (well-controlled)
+- Overweight/Obesity (BMI 29.2)
+
+---------- CURRENT MEDICATIONS ----------
+1. Ibuprofen 600mg - as needed (max 3x daily)
+2. Lisinopril 5mg - once daily (Blood pressure)
+3. Glucosamine 1500mg/Chondroitin 1200mg - daily (Joint support)
+4. Topical Diclofenac gel - applied to knee twice daily
+
+---------- VITAL SIGNS ----------
+Blood Pressure: 128/82 mmHg
+Heart Rate: 74 bpm
+Temperature: 98.4°F
+Weight: 185 lbs
+Height: 5'10"
+BMI: 26.5
+
+---------- PHYSICAL EXAMINATION ----------
+- General: Well-appearing, slightly obese
+- Right Knee: Mild swelling, mild warmth, pain with range of motion
+- Range of Motion: Flexion 110 degrees, Extension normal with mild pain
+- Special Tests: Positive Lachman test, negative McMurray test
+- Gait: Antalgic gait (limping on right side)
+
+---------- DIAGNOSTIC TEST RESULTS ----------
+- X-ray Right Knee: Grade 2 osteoarthritis, joint space narrowing noted
+- MRI Right Knee: Mild to moderate cartilage loss, meniscus intact
+- Inflammatory markers: CRP normal, ESR normal
+
+---------- ASSESSMENT & PLAN ----------
+1. Right knee osteoarthritis - Grade 2 severity
+2. Pain management strategy:
+   - Continue NSAIDs as needed, not to exceed 3x daily
+   - Physical therapy program (prescribed 3x/week for 6 weeks)
+   - Weight management counseling - target loss of 15 lbs
+   - Consideration of intra-articular injections if conservative therapy fails
+3. Activity modification: Avoid high-impact activities, elevate leg when resting
+4. Knee brace recommended for support during work
+5. Follow-up imaging in 6 months if symptoms persist
+6. Schedule follow-up appointment in 8 weeks
+
+---------- DOCTOR'S NOTES ----------
+Patient motivated to improve symptoms through conservative management. Explained that weight loss and physical therapy can significantly reduce pain and improve function. Patient understands that surgery (knee replacement) may be needed in future, but current conservative approach is appropriate. Provided detailed handout on joint protection strategies.

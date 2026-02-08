@@ -1,0 +1,59 @@
+======================================
+PATIENT MEDICAL RECORD
+======================================
+Patient ID: 012
+Name: Sarah Martinez
+Age: 45
+Gender: Female
+Date of Record: 2024-02-18
+Hospital: Westside Hospital
+
+---------- CHIEF COMPLAINT ----------
+Persistent dry cough for 3 weeks and mild chest pain when coughing
+
+---------- MEDICAL HISTORY ----------
+- Asthma (childhood onset, currently well-controlled)
+- Seasonal Allergic Rhinitis
+- GERD (Gastroesophageal Reflux Disease)
+- Previous pneumonia (2020)
+- Smoking history: Former smoker, quit 8 years ago
+
+---------- CURRENT MEDICATIONS ----------
+1. Fluticasone/Salmeterol inhaler - twice daily (Asthma control)
+2. Albuterol inhaler - as needed for rescue
+3. Omeprazole 20mg - once daily (GERD management)
+4. Cetirizine 10mg - once daily (Allergy relief)
+5. Vitamin C 1000mg - daily supplement
+
+---------- VITAL SIGNS ----------
+Blood Pressure: 122/78 mmHg
+Heart Rate: 78 bpm
+Temperature: 98.2°F
+Respiratory Rate: 16 breaths/min
+Oxygen Saturation: 97% on room air
+
+---------- PHYSICAL EXAMINATION ----------
+- General: Alert, no distress
+- ENT: Nasal mucosa mildly inflamed, clear discharge
+- Lungs: Clear to auscultation, mild wheezing in bilateral bases
+- Abdomen: Soft, non-tender
+
+---------- DIAGNOSTIC TEST RESULTS ----------
+- Chest X-ray: No infiltrates, normal cardiac silhouette
+- CBC: All values within normal limits
+- Allergy skin test: Positive for dust mites, mold
+- PFT (Pulmonary Function Tests): FEV1 at 92% predicted, FVC normal
+
+---------- ASSESSMENT & PLAN ----------
+1. Persistent cough likely secondary to: post-viral, possible asthma component, GERD
+2. Asthma - well controlled on current inhaler therapy
+3. Environmental allergies - positive allergy testing
+4. Prescribed:
+   - Trial of H2-blocker (Famotidine) for GERD optimization
+   - High-dose Vitamin D 2000 IU daily
+   - Consider allergy immunotherapy referral
+5. Monitor for duration of cough; if persists >4 weeks, consider CT scanning
+6. Follow-up in 3 weeks
+
+---------- DOCTOR'S NOTES ----------
+Patient is frustrated with persistent cough interfering with work. No fever, no dyspnea at rest. Oxygen saturation excellent. Lung sounds mostly clear with minimal wheezing. Likely multi-factorial etiology. Patient counseled on environmental triggers and instructed on proper inhaler technique. Strong recommendation to continue allergen avoidance measures.

@@ -1,0 +1,81 @@
+======================================
+PATIENT MEDICAL RECORD
+======================================
+Patient ID: 015
+Name: David Anderson
+Age: 62
+Gender: Male
+Date of Record: 2024-02-19
+Hospital: Neurology Department
+
+---------- CHIEF COMPLAINT ----------
+Intermittent headaches, dizziness, and occasional memory lapses over past 4 months
+
+---------- MEDICAL HISTORY ----------
+- Type 2 Diabetes (diagnosed 2010)
+- Hypertension (diagnosed 2008)
+- High Cholesterol (diagnosed 2012)
+- Migraine history (since childhood, not recent)
+- Sleep Apnea (diagnosed 2022, uses CPAP)
+- Alcohol use: Moderate, 2-3 drinks per week
+
+---------- CURRENT MEDICATIONS ----------
+1. Atorvastatin 40mg - once daily (Cholesterol)
+2. Candesartan 16mg - once daily (Blood pressure)
+3. Metformin 850mg - twice daily (Diabetes)
+4. Glipizide 5mg - once daily (Diabetes)
+5. Aspirin 81mg - once daily (Cardiovascular protection)
+6. Melatonin 5mg - nightly (Sleep)
+
+---------- VITAL SIGNS ----------
+Blood Pressure: 134/82 mmHg
+Heart Rate: 76 bpm
+Temperature: 98.7°F
+Respiratory Rate: 14 breaths/min
+Blood Sugar (fasting): 156 mg/dL
+
+---------- PHYSICAL EXAMINATION ----------
+- General: Alert, oriented to person and place, difficulty with recent memory
+- Neuro exam: 
+  * Cranial nerves: II-XII intact
+  * Motor: Strength 5/5 throughout
+  * Sensory: Intact except mild distal neuropathy in feet
+  * Reflexes: Brisk, normal
+  * Gait: Normal but slightly cautious
+- Fund of eye: Mild hypertensive changes
+
+---------- DIAGNOSTIC TEST RESULTS ----------
+- MRI Brain: Small area of white matter hyperintensity (T2 FLAIR), no acute changes
+- Carotid Ultrasound: Less than 50% stenosis bilaterally (mild)
+- ECG: Normal sinus rhythm, LVH pattern
+- Lipid Panel: Total Cholesterol 165, LDL 95, HDL 38, Triglycerides 135
+- Glucose: Fasting 156 mg/dL, HbA1c 7.8% (suboptimal control)
+- CBC: Normal
+- Metabolic Panel: All normal
+
+---------- ASSESSMENT & PLAN ----------
+1. Headaches and dizziness - likely related to:
+   - Suboptimal blood pressure control
+   - Suboptimal glucose control (diabetes)
+   - Sleep apnea (confirm CPAP compliance)
+   - Possible mild cerebral vascular disease
+2. Cognitive symptoms - concerning for early cognitive decline
+   - Recommend Cognitive assessment/neuropsychological testing
+   - Consider early Alzheimer's screening given white matter changes
+3. Diabetes - inadequate glucose control
+   - Increase Glipizide to 5mg twice daily
+   - Reinforce dietary restrictions and exercise
+   - Target HbA1c <7%
+4. Hypertension - not optimal
+   - Consider increasing Candesartan to 32mg daily
+5. Sleep Apnea - assess CPAP compliance
+   - Patient to report hours of CPAP use
+6. Cardiovascular risk - continue current protective medications
+7. Referral to:
+   - Neuropsychology for cognitive testing
+   - Sleep Medicine for CPAP adjustment
+8. Close follow-up in 4 weeks
+9. Patient advised on warning signs: sudden severe headache, weakness, speech changes
+
+---------- DOCTOR'S NOTES ----------
+Patient has complex medical history with multiple cardiovascular risk factors. White matter changes on MRI concerning for subclinical cerebrovascular disease. Memory complaints warrant further evaluation. Current medication regimen may need adjustment. Emphasized importance of CPAP compliance, glycemic control, and blood pressure management. Patient counseled on stroke prevention strategies. Will obtain formal cognitive testing to establish baseline.

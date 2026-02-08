@@ -1,0 +1,72 @@
+======================================
+PATIENT MEDICAL RECORD
+======================================
+Patient ID: 014
+Name: Jennifer Wilson
+Age: 38
+Gender: Female
+Date of Record: 2024-02-21
+Hospital: Endocrinology Department
+
+---------- CHIEF COMPLAINT ----------
+Fatigue, weight gain, and irregular menstrual cycles for 8 months
+
+---------- MEDICAL HISTORY ----------
+- Hypothyroidism (diagnosed 2015)
+- Polycystic Ovary Syndrome - PCOS (diagnosed 2018)
+- Insulin Resistance
+- Mild anxiety
+- No prior surgeries
+
+---------- CURRENT MEDICATIONS ----------
+1. Levothyroxine 75mcg - once daily in morning (Thyroid)
+2. Metformin 1000mg - twice daily (PCOS, insulin resistance)
+3. Spironolactone 50mg - twice daily (Hormonal balance, PCOS)
+4. Sertraline 50mg - once daily (Anxiety)
+5. Vitamin D 2000 IU - daily supplement
+6. Omeprazole 20mg - once daily as needed
+
+---------- VITAL SIGNS ----------
+Blood Pressure: 118/76 mmHg
+Heart Rate: 72 bpm
+Temperature: 98.0°F
+Weight: 165 lbs
+Height: 5'6"
+BMI: 26.7
+
+---------- PHYSICAL EXAMINATION ----------
+- General: Alert, appears fatigued
+- Skin: Mild hirsutism on face and arms (excessive hair growth)
+- Abdomen: Round distribution of adiposity, no tenderness
+- Pelvic: No masses, normal external genitalia
+- Thyroid: Small, smooth, non-tender
+
+---------- DIAGNOSTIC TEST RESULTS ----------
+- TSH: 2.1 mIU/L (indicating good thyroid control)
+- Free T4: 1.2 ng/dL (normal)
+- Fasting Glucose: 106 mg/dL (slightly elevated)
+- Fasting Insulin: 18 mIU/L (elevated - insulin resistance)
+- HOMA-IR: 4.8 (indicates moderate insulin resistance)
+- Total Testosterone: 56 ng/dL (mildly elevated)
+- LH/FSH Ratio: 3.2:1 (elevated, consistent with PCOS)
+- Lipid Panel: Total Cholesterol 208, HDL 38, LDL 142, Triglycerides 165 (dyslipidemia)
+
+---------- ASSESSMENT & PLAN ----------
+1. Hypothyroidism - adequately controlled on current levothyroxine dose
+2. Polycystic Ovary Syndrome - symptoms worsening
+   - Continue current spironolactone and metformin
+   - Consider increasing metformin dose to 1500mg twice daily
+   - Lifestyle modifications emphasized (diet, exercise)
+3. Insulin resistance - significant metabolic dysfunction noted
+   - Diabetes risk assessment: 10-year risk 8% (moderate)
+   - Recommend low glycemic index diet
+   - Cardiovascular risk evaluation
+4. Dyslipidemia - currently not on statin therapy
+   - Recommend starting low-dose statin (Atorvastatin 20mg daily)
+5. Fertility concerns: Discussed ovulation induction options if desired
+6. Referral to nutritionist for metabolic optimization
+7. Follow-up labs in 3 months (TSH, glucose, lipids)
+8. Gynecology follow-up for menstrual cycle management
+
+---------- DOCTOR'S NOTES ----------
+Patient frustrated with weight gain despite dietary efforts. Explained that PCOS and insulin resistance make weight loss very challenging and require multi-pronged approach. Emphasized importance of regular exercise (cardio + resistance training) and stress management. Discussed long-term health risks and prevention strategies. Patient receptive to lifestyle changes and medication adjustments.
